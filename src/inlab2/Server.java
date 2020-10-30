@@ -14,7 +14,7 @@ public class Server {
 	 */
 	private BufferedReader socketInput;
 	/**
-	 * BufferedReader to read output stream of aSocket
+	 * PrintWriter to read output stream of aSocket
 	 */
 	private PrintWriter socketOutput;
 	/**
