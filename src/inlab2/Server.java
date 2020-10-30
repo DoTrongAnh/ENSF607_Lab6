@@ -9,9 +9,21 @@ import java.net.Socket;
 
 public class Server {
 
+	/**
+	 * BufferedReader to read input Stream of aSocket
+	 */
 	private BufferedReader socketInput;
+	/**
+	 * BufferedReader to read output stream of aSocket
+	 */
 	private PrintWriter socketOutput;
+	/**
+	 * ServerSocket to establish connection with Client
+	 */
 	private ServerSocket serverSocket;
+	/**
+	 * Socket to communicate with Client
+	 */
 	private Socket aSocket;
 	
 	/**
