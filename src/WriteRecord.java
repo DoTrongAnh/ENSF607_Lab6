@@ -1,7 +1,7 @@
 /**
  * Started by M. Moussavi
  * March 2015
- * Completed by: STUDENT(S) NAME
+ * Completed by: Do Trong Anh
  */
 
 import java.io.FileInputStream;
@@ -48,6 +48,11 @@ public class WriteRecord {
 	public void openFileInputStream(String textFileName) {
         
      // TO BE COMPLETED BY THE STUDENTS
+		try {
+			textFileIn = new Scanner(new FileInputStream(textFileName));
+		} catch (FileNotFoundException e) {
+			System.err.println("ERROR: " + e.getMessage());
+		}
 	}
 
 	/**
@@ -57,7 +62,13 @@ public class WriteRecord {
 	public void openObjectOutputStream(String objectFileName) {
         
     // TO BE COMPLETED BY THE STUDENTS
-        
+        try {
+			objectOut = new ObjectOutputStream(new FileOutputStream(objectFileName));
+		} catch (FileNotFoundException e) {
+			System.err.println("ERROR: " + e.getMessage());
+		} catch (IOException e) {
+			System.err.println("ERROR: " + e.getMessage());
+		}
 	}
 	
 	/**
@@ -85,9 +96,23 @@ public class WriteRecord {
 			textFileIn.nextLine();   // read the dashed lines and do nothing
             
             // THE REST OF THE CODE TO BE COMPLETED BY THE STUDENTS
+			record = new MusicRecord();
+			this.setRecord(year, songName, singerName, price);
+			try {
+				objectOut.writeObject(this.record);
+			} catch (IOException e) {
+				System.err.println("ERROR: " + e.getMessage());
+			}
 		}
 
 		// YOUR CODE GOES HERE
+		try {
+			objectOut.writeObject(null);//Null object to simulate EOF
+			objectOut.close();
+		} catch (IOException e) {
+			System.err.println("ERROR: " + e.getMessage());
+		}
+		textFileIn.close();
 	}
 
 	public static void main(String[] args) throws IOException {

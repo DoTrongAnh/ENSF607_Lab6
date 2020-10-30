@@ -1,7 +1,7 @@
 /** 
  * Started by M. Moussavi
  * March 2015
- * Completed by: STUDENT(S) NAME
+ * Completed by: Do Trong Anh
  */
 
 import java.io.EOFException;
@@ -43,9 +43,21 @@ public class ReadRecord {
                 
                 
                 // TO BE COMPLETED BY THE STUDENTS
-                
+                record = (MusicRecord)input.readObject();
+                if(record == null) break;
+                System.out.println(record.getYear());
+                System.out.println(record.getSongName());
+                System.out.println(record.getSingerName());
+                System.out.println(record.getPurchasePrice());
+                System.out.println("-------------------");
            
             }   // END OF WHILE
+        }
+        catch(IOException e) {
+        	System.err.println("ERROR: " + e.getMessage());
+        }
+        catch(ClassNotFoundException e) {
+        	System.err.println("ERROR: " + e.getMessage());
         }
                 // ADD NECESSARY catch CLAUSES HERE
 
