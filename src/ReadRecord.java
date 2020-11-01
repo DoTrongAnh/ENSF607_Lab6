@@ -54,7 +54,7 @@ public class ReadRecord {
             }   // END OF WHILE
         }
         catch(IOException e) {
-        	System.err.println("ERROR: " + e.getMessage());
+        	System.err.println("END OF FILE");
         }
         catch(ClassNotFoundException e) {
         	System.err.println("ERROR: " + e.getMessage());
@@ -67,6 +67,6 @@ public class ReadRecord {
     public static void main(String [] args)
     {
         ReadRecord d = new ReadRecord();
-        d.readObjectsFromFile("mySongs.ser");
+        d.readObjectsFromFile("allSongs.ser");
     }
 }
