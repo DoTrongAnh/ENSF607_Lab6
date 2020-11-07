@@ -32,3 +32,7 @@ Author: Do Trong Anh
 - `src/inlab2/GameServerGUI.java`: same as GameServer but its pool executes GameGUI threads instead.
 - `src/inlab2/GameGUI.java`: same as Game, but modified to properly receive responses from client-sided button presses.
 - `src/inlab2/Board.java`: depended on by GameGUI to keep track of the status of the game and determine the outcome, wand when the game ends.
+
+## Bonus:
+- `src/server_only/`: contains the model to run on the server machine (the developer's PC).
+- `src/client_only/`: contains the model to run on the client machine (the tester's PC). Please run PlayerClientGUI.java to start connection with server's domain.
